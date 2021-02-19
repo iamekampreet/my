@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<title>China Bistro</title>
+	<link rel="Stylesheet" href="css/bootstrap.min.css">
+	<link rel="Stylesheet" href="css/sitestyle.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+	<header>
+		<nav id="header-nav" class="navbar navbar-expand-md navbar-light">
+			<div class="container">
+				<ul class="navbar-nav">
+				<li class="nav-item d-none d-md-block">
+					<a class="nav-link" href="index.html">
+						<img src="images/restaurant-logo.png" alt="Logo of restaurant">
+					</a>
+				</li>
+				<li class="nav-item navbar-brand">
+					<div class="">
+						<a href="index.html" class="nav-link" ><h1> A Restaurant's long name </h1></a>
+					</div>
+					<div>
+						<img src="images/star-k-logo.png" alt="Logo of Kosher Certification">
+						<span class="navbar-text"> Kosher Certified</span>
+					</div>
+				<li>
+				</ul>
+
+ 				<button id="navbarcollapse" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbartoggle" aria-controls="navbartoggle" aria-expanded="false" aria-label="Toggle navigation">
+    			  <span class="navbar-toggler-icon"></span>
+    			</button>
+  				<div id="navbartoggle" class="collapse navbar-collapse justify-content-end">
+    				<ul class="navbar-nav">
+				      <li class="nav-item active d-md-none fullWidthNav my-1">
+				        <a class="nav-link py-0" href="index.html"> <span id="home" class="material-icons">home</span><br>Home</a>
+				      </li>
+				      <li class="nav-item fullWidthNav my-1">
+				        <a class="nav-link py-0" href="#" onclick="dc.loadMenuCategories();"> <span id="menu" class="material-icons">restaurant_menu</span><br>Menu</a>
+				      </li>
+				      <li class="nav-item fullWidthNav my-1">
+				        <a class="nav-link py-0" href="#" onclick="dc.loadAbout();"><span id="info" class="material-icons">info</span><br>About</a>
+				      </li>
+				      <li class="nav-item fullWidthNav my-1">
+				        <a class="nav-link py-0" href="#" onclick="dc.loadAwards();"><span id="event" class="material-icons">emoji_events</span><br>Awards</a>
+				      </li>
+				      <li class="nav-item d-none d-md-block">
+				      	<a class="nav-link" href="tel:+919914734200"><div id="phno" class="navbar-text"> +919914734200 </div></a>
+				      	<div id="deliver" class="navbar-text"> * We Deliver </div>
+				      </li>
+				    </ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div id="btnph" class="container text-center d-md-none">
+		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+  			<path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+		</svg>
+	<a id="phno" href="tel:+919914734200"> +919914734200 </a></div>
+	<div id="deliver2" class="text-center d-md-none"> * We Deliver </div>
+
+
+	<section id="maincontent" class="container">	</section> <!-- #maincontent.container -->
+
+
+	<footer>
+	<div class="container">
+		<div class="row">
+			<section id="timings" class="col-sm-4">
+				<span>Timings:</span><p>
+					9:00am - 9:00pm Weekdays<br>
+					11:00am - 11:00pm Saturday<br>
+					Closed on Sundays</p>
+			<hr class="d-sm-none">
+			</section>
+			
+
+			<section id="address" class="col-sm-4">
+				<span> Address: </span><p>
+					Shop number something <br>
+					Some street name<br>
+					City name, state, country</p>
+			<hr class="d-sm-none">
+			</section>
+			
+
+			<section id="testimonials" class="col-sm-4">
+				<p> "This restaurant was okay-ish"</p>
+				<p> "I can't say I had fun"</p>
+				<p> "The site designer needs a raise"</p>
+			<hr class="d-sm-none">
+			</section>
+			
+			<p class="text-center"> &#169 Copyright of some restaurant</p>
+		</div>
+	</div>
+	</footer>
+
+
+<!-- <script src = "js/jquery-3.5.1.min.js"></script> -->
+<script src = "js/bootstrap.min.js"></script>
+<script src = "js/ajax-utils.js"></script>
+<script src = "js/script.js"></script>
+</body>
+</html>
+
+
+
+
+

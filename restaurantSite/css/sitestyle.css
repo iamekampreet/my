@@ -1,0 +1,323 @@
+body {
+	background-color:#61122f;
+	font-family: 'Oxygen', sans-serif;
+	/*font-size: 16px;*/
+}	/*Applying to whole body*/
+
+
+/*Header starts*/
+#header-nav {
+	background-color:#f6b319;
+}         
+.navbar-brand h1 {
+	font-family: 'Lora', serif;
+	font-size:2vw;
+	color:#557c3e;
+	margin-top:10px;
+	line-height: .75;
+	text-shadow: 1px 1px 1px black;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.navbar-brand img{
+	padding-left:10px;
+}
+.navbar-brand span{
+	color:#000;
+	margin-top:5px;
+	font-size: 1vw;
+	font-weight: 900px;
+	text-transform:uppercase;
+}	/*Kosher certified text*/
+.navbar-brand a{
+	padding-bottom:0;
+	padding-left:0;
+}	/*container of h1*/
+
+#home, #menu, #info, #event {
+	font-size:36px;
+	color:#61122f;
+}	/*All the icons on navbar*/
+li>.nav-link {
+	font-weight:bold;
+}	/*Text under the icons on the navbar*/
+.active, .fullWidthNav:hover{
+	background-color:#ececec;
+}
+.fullWidthNav{
+	width:100%;
+	text-align:center;
+}
+#phno {
+	font-size: 1.3em;
+	color: #557c3e;
+	font-weight: 700;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	text-decoration: none;
+}	/*Number displayed on right*/
+#deliver {
+	font-size:.7em;
+	color: #557c3e;
+	float:right;
+	margin-top:0;
+	padding-top:0;
+	margin-right:10px;
+}	/*We Deliver diplayed on right*/
+/*Header ends*/
+
+
+#btnph {
+	margin-top:15px;
+	background-color: #f6b319;
+	border:3px solid white;
+	border-radius: 20px;
+	padding:5px;
+}	/*Number displayed under navbar*/
+#deliver2 {
+	font-size:.9em;
+	color: white;
+	margin-top:0;
+	padding-top:0;
+	margin-left:100px;
+}	/*We deliver displayed under number*/
+
+
+
+
+/*Home page #maincontent*/
+#maincontent {
+	margin-top:30px;
+}	/*The whole container*/
+
+#maincontent .jumbotron {
+	margin:0 0 15px 0;
+	padding:0;
+	border:2px solid #3f0c1f;
+}
+
+.menu-tile, .specials-tile, .map-tile {
+	height:250px;
+	margin-bottom:15px;	
+	position:relative;
+	border: 2px solid #3f0c1f;
+	/*overflow:hidden;*/
+}
+.menu-tile:hover, .specials-tile:hover, .map-tile:hover {
+	box-shadow: 0 1px 5px 1px #cccccc;
+}
+.menu-tile {
+	background:url("../images/menu-tile.jpg") no-repeat center;
+}
+.specials-tile {
+	background:url("../images/specials-tile.jpg") no-repeat center;
+}
+
+.menu-tile span,.specials-tile span, .map-tile span {
+	font-size: 1.6em;
+	color:white;
+	background-color:black;
+	opacity:.7;
+	position:absolute;
+	bottom:0;
+	width:100%;
+	text-align:center;
+	text-transform: uppercase;
+}
+/*Home Page maincontent ends*/
+
+
+
+
+/*Styles for menuCategories page*/
+#menuCatHead{
+	color:white;
+}
+#menuCatHead+p{
+	color:white;
+	font-size:0.8em;
+	margin-bottom:50px;
+}
+
+.menuCatTile{
+	width:200px;
+	height:200px;
+	position:relative;
+	border:1px solid black;
+	margin:0px auto 15px;
+	overflow:hidden;
+}
+.menuCatTile>span {
+	width:100%;
+	position:absolute;
+	bottom:0px;
+	text-align:center;
+	background-color:black;
+	opacity:0.7;
+
+}
+.menuCatTile:hover {
+	box-shadow:0 1px 5px 1px #cccccc;
+}
+
+/*Styles for menuCategories page ends*/
+
+
+
+
+
+/*Styles for singleCategories page*/
+#singleCatHead {
+	color:white;
+}
+#singleCatHead+p {
+	color:white;
+	font-size:.8em;
+	margin-bottom:50px;
+}
+
+.singleCatTile *{
+	color:white;
+}
+.singleCatTile>hr {
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+}
+.singleCatTile {
+	margin-bottom:20px;
+}
+
+.menuItemPhoto{
+	position:relative;
+	max-width:250px;
+	border:2px solid #3f0c1f;
+}
+.menuItemPhoto span {
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	width:60px;
+	text-align:center;
+	color:white;
+	background-color: #557c3e;
+	opacity:.8;
+}
+
+.singleCatTile .menuItemPrice {
+	text-align:right;
+}
+.singleCatTile .menuItemPrice span {
+	font-size:.8em;
+}
+
+.menuItemDescription p {
+	font-size:.8em;
+	font-style:italic;
+}
+
+/*Styles for singleCategories page ends*/
+
+
+
+
+/*Footer starts*/
+footer {
+	padding-top:30px;
+	background-color:#222;
+	color:white;
+}
+#timings>span, #address>span {
+	font-size:1.6em;
+}
+footer p {
+	line-height: 2;
+}
+#testimonials {
+	font-style:italic;
+}
+
+/*Footer ends*/
+
+
+
+
+/*Media Queries*/
+@media (min-width:1200px) {
+	#maincontent .jumbotron {
+		background: url("../images/jumbotron_1200.jpg") no-repeat;
+		height:675px;
+	} 	/*The big restaurant image on the home page*/
+
+}	/*Extra large devices*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	#maincontent .jumbotron {
+		background: url("../images/jumbotron_992.jpg") no-repeat;
+		height:558px;
+	}	/*The big restaurant image on the home page*/
+
+}	/*Large devices*/
+
+@media (min-width: 768px) and (max-width: 991px){
+	.nav-link>img {
+		width: 100px;
+		height:100px;
+	}	/*Making the brand logo smaller*/
+
+}	/*Medium devices*/
+
+@media(min-width:576px) and (max-width:767px){
+
+}	/*Small devices only*/
+
+@media (max-width: 767px){
+	/*Header content*/
+	.navbar-brand h1{
+		font-size:4vw;
+	}
+	.navbar-brand span{
+		font-size:10px;
+	}
+	.navbar-brand img{
+		padding-left:0;
+		width: 20px;
+		height: 20px;
+	}
+	/*Header ends*/
+
+}	/*Extra small and small devices*/
+
+@media (max-width: 575px) {
+
+	/*singleCategories page content*/
+	.menuItemPhoto {
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.singleCatTile .menuItemPrice, .menuItemDescription{
+		text-align:center;
+	}
+	/*singleCategories page content ends*/
+
+	/*Footer*/
+	footer section{
+		text-align:center;
+	}
+	footer hr{
+		width:50%;
+		margin:0 auto 15px;
+	}
+	/*Footer ends*/
+
+}	/*Extra small devices only*/
+
+
+
+
+
+
+
+
+
+
