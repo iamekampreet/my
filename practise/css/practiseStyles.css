@@ -1,0 +1,50 @@
+.dropdown-toggle::after {
+    display: none;
+}
+body{
+	background-color:#fbfbfb;
+}
+.myBox{
+	background-color:white;
+	box-shadow: 0.1px 0.1px 1px grey, -0.1px -0.1px 1px #fbfbfb;
+}
+.myProfilePic>p{
+	color:#ee007f;
+}
+
+.myEnterInfo>h6{
+	margin-bottom:0px;
+}
+.myEnterInfo>p{
+	margin-bottom:0px;
+}
+.myEnterInfo>hr{
+	width:70%;
+	margin-top:5px;
+}
+.myEnterInfo>hr,.myEnterInfo>h6{
+	color:#a7aeb4;
+}
+.mySave{
+	background-color:#ee007f;
+	border: 2px solid #ee007f;
+	color: white;
+	padding: 10px 30px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 10px 20px 0px 0px;
+	cursor: pointer;
+	border-radius: 7px;
+}
+.myCancel{
+	color: #ee007f;
+ 	border: 2px solid #ee007f;
+ 	padding: 10px 30px;
+ 	border-radius:7px;
+}
+
+
+
+
+
