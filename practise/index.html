@@ -51,27 +51,36 @@
 	        </div>
 	        <div class="col-md-8 myEnterInfo">
 	        	<h2 class="pb-5">Hi, Dave Lambert</h2>
-	        	<h6>Code</h6>
-	        	<p>7425</p>
-	        	<hr>
-	        	<h6>First Name</h6>
-	        	<p>Dave</p>
-	        	<hr>
-	        	<h6>Last Name</h6>
-	        	<p>Lambert</p>
-	        	<hr>
-	        	<h6>E-mail</h6>
-	        	<p>dave.lambert@gmail.com</p>
-	        	<hr>
-	        	<h6>Mobile Number</h6>
-	        	<p>+44 12345678</p>
-	        	<hr>
+	        	<form class="form-floating">
+				  <input type="number" class="form-control" id="hisCode" placeholder="name@example.com" value="7425">
+				  <label for="hisCode">Code</label>
+				</form>
+				<hr>
+	        	<form class="form-floating">
+				  <input type="text" class="form-control" id="firstName" placeholder="Your Name" value="Dave">
+				  <label for="firstName">First Name</label>
+				</form>
+				<hr>
+	        	<form class="form-floating">
+				  <input type="text" class="form-control" id="lastName" placeholder="Your Last Name" value="Lambert">
+				  <label for="lastName">Last Name</label>
+				</form>
+				<hr>
+	        	<form class="form-floating">
+				  <input type="email" class="form-control" id="emailAddress" placeholder="name@example.com" value="dave.lambert@gmail.com">
+				  <label for="emailAddress">E-mail</label>
+				</form>
+				<hr>
+	        	<form class="form-floating">
+				  <input type="text" class="form-control" id="mobileNumber" placeholder="Mobile Number" value="+44 12345678">
+				  <label for="mobileNumber">Mobile Number</label>
+				</form>
+				<hr>
 	        	<button class="mySave">Save</button>
 	        	<button class="myCancel">Cancel</button>
 	        </div>
 	    </div>
 	</div>
-<!-- Make these forms able to take input -->
 	<script src="../restaurantSite/js/bootstrap.min.js"> </script>
 	<script src="js/practiseScript.js"> </script>
 </body>	

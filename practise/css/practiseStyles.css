@@ -12,18 +12,19 @@ body{
 	color:#ee007f;
 }
 
-.myEnterInfo>h6{
+.myEnterInfo label{
 	margin-bottom:0px;
 }
-.myEnterInfo>p{
+.myEnterInfo input{
 	margin-bottom:0px;
+	border:0px;
 }
-.myEnterInfo>hr{
+.myEnterInfo hr{
 	width:70%;
 	margin-top:5px;
 }
-.myEnterInfo>hr,.myEnterInfo>h6{
-	color:#a7aeb4;
+.myEnterInfo hr,.myEnterInfo label{
+	color:grey;
 }
 .mySave{
 	background-color:#ee007f;
@@ -43,6 +44,24 @@ body{
  	padding: 10px 30px;
  	border-radius:7px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
