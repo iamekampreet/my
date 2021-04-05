@@ -3,10 +3,17 @@
 }
 body{
 	background-color:#fbfbfb;
+	/*background-color:gray;		/*testing*/*/
 }
+
+a{
+	text-decoration: none;
+}
+
 .myBox{
 	background-color:white;
 	box-shadow: 0.1px 0.1px 1px grey, -0.1px -0.1px 1px #fbfbfb;
+	/*box-shadow: 0.1px 0.1px 1px black, -0.1px -0.1px 1px black;*/
 }
 .myProfilePic>p{
 	color:#ee007f;
@@ -45,14 +52,37 @@ body{
  	border-radius:7px;
 }
 
+/*Cart.html sheet's styles*/
+.myTopRight, .myTopRight>a{
+	color:#ee007f;
+	font-size:14px;
+	text-decoration:none;
+}
+.myLGC{		/*My Light Grey Color*/
+	color:#c0c0c0;
+}
+.myBC{	/*My Blue Color*/
+	color:#00a3da;
+}
+
+.myCartBox3 span{
+	font-weight: bold;
+}
+
+.myHrBwCartBox{
+	width:1px;
+	height:20px;
+	padding:0 0.75%;
+	color:transparent;
+}
+
+@media(min-width: 992px){
+.myCartBox1, .myCartBox2, .myCartBox3{
+	width:32.3333%;
+}
 
 
-
-
-
-
-
-
+}
 
 
 

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Just for practise</title>
+	<link rel="Stylesheet" href="../restaurantSite/css/bootstrap.min.css">
+	<link rel="Stylesheet" href="css/practiseStyles.css">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-light" style="background-color:#00a3da;">
+		  <div class="container">
+		    <a class="navbar-brand" href="#">
+		      <img src="images/logo.png" alt="Logo of the company" width="70" height="70">
+		    </a>
+	    	<div class="nav-item dropdown my-auto">	
+	          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white;">
+	          	<div class="d-flex">
+	          		<i class="material-icons me-2" style="font-size:60px;color:#ace3f5;">account_circle</i>
+		            <p class="my-auto">Kevin</p>
+		            <i class="material-icons my-auto" style="font-size:30px">expand_more</i>
+		        </div>
+	          </a>
+	          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	            <li><a class="dropdown-item" href="#">Action</a></li>
+	            <li><a class="dropdown-item" href="#">Another action</a></li>
+	            <li><a class="dropdown-item" href="#">Something else here</a></li>
+	          </ul>
+	      	</li>
+	      	
+		    </div>
+		  </div>
+		</nav>	
+	</header>
+
+	<div class="container" >
+		<a href="#" class="d-flex my-3" style="text-decoration:none; color:#00a3da; font-size:17px">
+			<i class="material-icons my-auto" style="font-size:17px">keyboard_backspace</i>
+			<span class="mx-1">Back To Dashboard</span>
+		</a>
+	</div>
+
+	<div class="container mb-2">
+		<div class="row">
+			<div class="col-lg-4 myBox myCartBox1" >
+				<div class="myTopRight d-flex flex-row-reverse">
+					<a href="#" class="d-flex">
+						<i class="material-icons my-auto" style="font-size:16px;">replay</i>
+						<span>Change</span>
+					</a>
+				</div>
+				<div class="d-flex">
+					<i class="material-icons me-2 myLGC my-auto" style="font-size:30px;">store</i>
+					<div>
+						<h6 class="mb-0">Janes Retails</h6>
+						<p class="myLGC mb-0">30 Shambles Street Bansley Y017LX</p>	
+					</div>
+				</div>
+				<hr class="myLGC mb-0">
+				<div class="d-flex my-4">
+					<a href="#" class="d-flex mx-auto myBC">
+						<i class="material-icons my-auto me-2" style="font-size:25px;">shopping_cart</i>
+						<span class="text-center">View Basket</span>
+					</a>
+					<hr width="1" size="30" class="my-0">
+					<a href="#" class="d-flex mx-auto myBC">
+						<i class="material-icons my-auto me-2" style="font-size:25px;">toc</i>
+						<span>View Suggested</span>
+					</a>
+				</div>
+			</div>
+
+			<hr class="myHrBwCartBox">
+
+			<div class="col-lg-4 myBox myCartBox2" >
+				<div class="myTopRight d-flex flex-row-reverse">
+					<a href="#" class="d-flex">
+						<i class="material-icons my-auto" style="font-size:16px;">close</i>
+						<span>Close</span>
+					</a>
+				</div>
+				<p class="myLGC my-0">Select Duration</p>
+				<div class="d-flex">
+					<i class="material-icons me-2 myLGC my-auto" style="font-size:30px;">date_range</i>
+					<form>
+					  <div class="d-flex">
+					  	<input type="text" class="form-control border-0" id="dateStart" aria-describedby="startDate" value="25-Mar-2020">
+					  	<span class="myLGC my-auto">to</span>
+					  	<input type="text" class="form-control border-0" id="dateEnd" aria-describedby="endDate" value="28-Mar-2020">
+					  </div>
+					</form>
+				</div>
+				<hr class="myLGC my-0">
+				<div class="text-center ">
+					<span style="color:green;">OR</span>
+				</div>
+				<a href="#" class="myLGC">Select Last Order<br>Select</a>
+				<hr class="myLGC mt-0">
+			</div>
+
+			<hr class="myHrBwCartBox">
+
+			<div class="col-lg-4 myBox d-flex myCartBox3" >
+					<i class="material-icons mx-3 myLGC my-auto" style="font-size:30px; color:green;">emoji_objects</i>
+					<div>
+						<p class="myLGC my-3">The Acceptance Rate</p>
+						<p class="my-1"><span>30%</span> Suggested Products</p>
+						<p class="mt-1 mb-4"><span>70%</span> Added to the basket</p>	
+					</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="container myBox my-3">
+		<div class="row py-3">
+
+			<div class="col-lg-7 d-sm-flex mb-3">
+				<div class="d-flex my-3 mx-auto me-1">
+					<div class="d-flex mx-auto">
+						<i class="material-icons myLGC my-auto" style="font-size:25px;">search</i>
+						<form> <input type="text" class="form-control mx-auto myLGC border-top-0 border-start-0 border-end-0" id="mySearch" aria-describedby="SearchBar" value="Search Products"> </form>
+					</div>
+				</div>
+
+				<div class="d-flex">
+					<div class="form-floating mx-auto me-1 mb-1">
+					  <select class="form-select border-top-0 border-start-0 border-end-0" style="width:10em" id="Category" aria-label="Floating label select example">
+					    <option selected>Bagged Sweets</option>
+					    <option value="1">One</option>
+					    <option value="2">Two</option>
+					    <option value="3">Three</option>
+					  </select>
+					  <label for="Category" class="myLGC" style="font-size:1.2em;">Category</label>
+					</div>
+					
+					<div class="form-floating mx-auto">
+					  <select class="form-select border-top-0 border-start-0 border-end-0" style="width:10rem;" id="Category" aria-label="Floating label select example">
+					    <option selected>All Products</option>
+					    <option value="1">One</option>
+					    <option value="2">Two</option>
+					    <option value="3">Three</option>
+					  </select>
+					  <label for="Category" class="myLGC" style="font-size:1.2em;">Products</label>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-5 d-flex">
+				<div class="d-flex mx-auto">
+					<div class="form-check my-auto mx-2">
+					  <input class="form-check-input" type="checkbox" value="" id="topSellers" checked>
+					  <label class="form-check-label" for="topSellers">
+					    Top Sellers
+					  </label>
+					</div>
+					<div class="form-check my-auto mx-2">
+					  <input class="form-check-input" type="checkbox" value="" id="selectedProducts" checked>
+					  <label class="form-check-label" for="selectedProducts">
+					    Selected Products
+					  </label>
+					</div>
+				</div>
+
+				<div class="my-auto mx-auto">
+					<a href="#" class="my-auto mx-2"><i class="material-icons" style="font-size:25px;color:#00a3da;">grid_view</i></a>
+					<a href="#" class="my-auto ms-2"><i class="material-icons myLGC" style="font-size:25px;">view_list</i></a>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="table-responsive">
+		  	<table class="table table-light table-striped table-hover align-middle">
+		  	 <thead>
+			    <tr>
+			      <th></th>
+			      <th scope="col">Product Code</th>
+			      <th scope="col">Unit</th>
+			      <th scope="col">Description</th>
+			      <th scope="col">Cost</th>
+			      <th scope="col">RSP</th>
+			      <th scope="col">Margin</th>
+			      <th scope="col">Category</th>
+			      <th scope="col">Last Order</th>
+			      <th scope="col">Ordered Qty.</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <td style="width:0;padding:5px 0;"><hr width=5 size=70 style="color:green;margin:0"></td>
+			      <td>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+					  <label class="form-check-label" for="flexCheckChecked">
+					    102
+					  </label>
+					</div>	
+			      </td>
+			      <td>
+			      	<div class="d-flex">
+				      	<img src="images/chips1.png" width=35 height=44>
+				      	<span class="my-auto">Fritolay Doritos Cool Ranch</span>
+			      	</div>
+			      </td>
+			      <td>198gm</td>
+			      <td>$14.99</td>
+			      <td>$1.00</td>
+			      <td>30%</td>
+			      <td>Bagged Sweets</td>
+			      <td>25-March-2020</td>
+			      <td>9</td>
+			    </tr>
+			    
+			    <tr>
+			      <td style="width:0;padding:5px 0;"><hr width=5 size=70 style="color:green;margin:0"></td>
+			      <td>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+					  <label class="form-check-label" for="flexCheckChecked">
+					    102
+					  </label>
+					</div>	
+			      </td>
+			      <td>
+			      	<div class="d-flex">
+				      	<img src="images/chips1.png" width=35 height=44>
+				      	<span class="my-auto">Fritolay Doritos Cool Ranch</span>
+			      	</div>
+			      </td>
+			      <td>198gm</td>
+			      <td>$14.99</td>
+			      <td>$1.00</td>
+			      <td>30%</td>
+			      <td>Bagged Sweets</td>
+			      <td>25-March-2020</td>
+			      <td>9</td>
+			    </tr>
+			    
+			    <tr>
+			      <td style="width:0;padding:5px 0;"><hr width=5 size=70 style="color:green;margin:0"></td>
+			      <td>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+					  <label class="form-check-label" for="flexCheckChecked">
+					    102
+					  </label>
+					</div>	
+			      </td>
+			      <td>
+			      	<div class="d-flex">
+				      	<img src="images/chips1.png" width=35 height=44>
+				      	<span class="my-auto">Fritolay Doritos Cool Ranch</span>
+			      	</div>
+			      </td>
+			      <td>198gm</td>
+			      <td>$14.99</td>
+			      <td>$1.00</td>
+			      <td>30%</td>
+			      <td>Bagged Sweets</td>
+			      <td>25-March-2020</td>
+			      <td>
+			      	<div class="d-flex">
+				      	<span class="my-auto">9</span>	
+				      	<div class="mx-4">
+				      		<div class="d-flex"><i class="material-icons mx-auto" style="color:red">delete_outline</i></div>
+				      		<div>In Basket</div>
+				      	</div>
+				    </div>
+			      </td>
+			    </tr>
+
+			    <tr>
+			      <td style="width:0;padding:5px 0;"><hr width=5 size=70 style="color:green;margin:0"></td>
+			      <td>
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+					  <label class="form-check-label" for="flexCheckChecked">
+					    102
+					  </label>
+					</div>	
+			      </td>
+			      <td>
+			      	<div class="d-flex">
+				      	<img src="images/chips1.png" width=35 height=44>
+				      	<span class="my-auto">Fritolay Doritos Cool Ranch</span>
+			      	</div>
+			      </td>
+			      <td>198gm</td>
+			      <td>$14.99</td>
+			      <td>$1.00</td>
+			      <td>30%</td>
+			      <td>Bagged Sweets</td>
+			      <td>25-March-2020</td>
+			      <td>9</td>
+			    </tr>
+
+			  </tbody>	
+			</table>	
+		</div>
+
+
+
+	</div>
+
+	<script src="../restaurantSite/js/bootstrap.min.js"> </script>
+	<script src="js/practiseScript.js"> </script>
+</body>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
