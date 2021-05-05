@@ -1,38 +1,14 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import logo from './logo.png';
 import chips1 from './chips1.png';
+// import { Link } from 'react-router-dom';
 
 export default function fun(){
     return(
 <div>
-    
-    <header>
-		<nav className="navbar navbar-light" style={{backgroundColor:'#00a3da'}}>
-		  <div className="container">
-		    <a className="navbar-brand" href="#">
-		      <img src={logo} alt="Logo of the company" width="70" height="70" />
-		    </a>
-	    	<div className="nav-item dropdown my-auto">	
-	          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color:'white'}}>
-	          	<div className="d-flex">
-	          		<i className="material-icons me-2" style={{fontSize:'60px',color:'#ace3f5'}}>account_circle</i>
-		            <p className="my-auto">Kevin</p>
-		            <i className="material-icons my-auto" style={{fontSize:'30px'}}>expand_more</i>
-		        </div>
-	          </a>
-	          <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-	            <li><a className="dropdown-item" href="#">Action</a></li>
-	            <li><a className="dropdown-item" href="#">Another action</a></li>
-	            <li><a className="dropdown-item" href="#">Something else here</a></li>
-	          </ul>
-
-		    </div>
-		  </div>
-		</nav>	
-	</header>
 
 	<div className="container" >
-		<a href="#" className="d-flex my-3" style={{textDecoration:'none', color:'#00a3da', fontSize:'17px'}}>
+		<a id="backToDashboard" href="/" className="d-flex my-3" style={{textDecoration:'none', color:'#00a3da', fontSize:'17px'}}>
 			<i className="material-icons my-auto" style={{fontSize:'17px'}}>keyboard_backspace</i>
 			<span className="mx-1">Back To Dashboard</span>
 		</a>
@@ -188,113 +164,12 @@ export default function fun(){
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr>
-			      <td style={{width:'0', padding:'5px 0'}}><hr width='5' size='70' style={{color:'green', margin:'0'}} /></td>
-			      <td>
-					<div className="form-check">
-					  <input className="form-check-input" type="checkbox" defaultValue="" id="flexCheckChecked" defaultChecked />
-					  <label className="form-check-label" htmlFor="flexCheckChecked">
-					    102
-					  </label>
-					</div>	
-			      </td>
-			      <td>
-			      	<div className="d-flex">
-				      	<img src={chips1} width='35' height='44' alt='chips' />
-				      	<span className="my-auto">Fritolay Doritos Cool Ranch</span>
-			      	</div>
-			      </td>
-			      <td>198gm</td>
-			      <td>$14.99</td>
-			      <td>$1.00</td>
-			      <td>30%</td>
-			      <td>Bagged Sweets</td>
-			      <td>25-March-2020</td>
-			      <td>9</td>
-			    </tr>
 			    
-			    <tr>
-				<td style={{width:'0', padding:'5px 0'}}><hr width='5' size='70' style={{color:'green', margin:'0'}} /></td>
-			      <td>
-					<div className="form-check">
-					  <input className="form-check-input" type="checkbox" defaultValue="" id="flexCheckChecked" defaultChecked />
-					  <label className="form-check-label" htmlFor="flexCheckChecked">
-					    102
-					  </label>
-					</div>	
-			      </td>
-			      <td>
-			      	<div className="d-flex">
-					  <img src={chips1} width='35' height='44' alt='chips' />
-				      	<span className="my-auto">Fritolay Doritos Cool Ranch</span>
-			      	</div>
-			      </td>
-			      <td>198gm</td>
-			      <td>$14.99</td>
-			      <td>$1.00</td>
-			      <td>30%</td>
-			      <td>Bagged Sweets</td>
-			      <td>25-March-2020</td>
-			      <td>9</td>
-			    </tr>
-			    
-			    <tr>
-				<td style={{width:'0', padding:'5px 0'}}><hr width='5' size='70' style={{color:'green', margin:'0'}} /></td>
-			      <td>
-					<div className="form-check">
-					  <input className="form-check-input" type="checkbox" defaultValue="" id="flexCheckChecked" defaultChecked />
-					  <label className="form-check-label" htmlFor="flexCheckChecked">
-					    102
-					  </label>
-					</div>	
-			      </td>
-			      <td>
-			      	<div className="d-flex">
-					  <img src={chips1} width='35' height='44' alt='chips' />
-				      	<span className="my-auto">Fritolay Doritos Cool Ranch</span>
-			      	</div>
-			      </td>
-			      <td>198gm</td>
-			      <td>$14.99</td>
-			      <td>$1.00</td>
-			      <td>30%</td>
-			      <td>Bagged Sweets</td>
-			      <td>25-March-2020</td>
-			      <td>
-			      	<div className="d-flex">
-				      	<span className="my-auto">9</span>	
-				      	<div className="mx-4">
-				      		<div className="d-flex"><i className="material-icons mx-auto" style={{color:'red'}}>delete_outline</i></div>
-				      		<div>In Basket</div>
-				      	</div>
-				    </div>
-			      </td>
-			    </tr>
-
-			    <tr>
-			      <td style={{width:'0', padding:'5px 0'}}><hr width='5' size='70' style={{color:'green', margin:'0'}} /></td>
-			      <td>
-					<div className="form-check">
-					  <input className="form-check-input" type="checkbox" defaultValue="" id="flexCheckChecked" defaultChecked />
-					  <label className="form-check-label" htmlFor="flexCheckChecked">
-					    102
-					  </label>
-					</div>	
-			      </td>
-			      <td>
-			      	<div className="d-flex">
-					  <img src={chips1} width='35' height='44' alt='chips' />
-				      	<span className="my-auto">Fritolay Doritos Cool Ranch</span>
-			      	</div>
-			      </td>
-			      <td>198gm</td>
-			      <td>$14.99</td>
-			      <td>$1.00</td>
-			      <td>30%</td>
-			      <td>Bagged Sweets</td>
-			      <td>25-March-2020</td>
-			      <td>9</td>
-			    </tr>
+				<Item/>
+				<Item/>
+				<Item/>
+				<Item del={true}/>
+				<Item del={false}/>
 
 			  </tbody>	
 			</table>	
@@ -306,3 +181,49 @@ export default function fun(){
 )
 }
 
+
+function Item(props){
+	let lastElement;
+	if(props.del===true){
+		lastElement=(
+		<td>
+			<div className="d-flex">
+				<span className="my-auto">9</span>	
+				<div className="mx-4">
+					<div className="d-flex"><i className="material-icons mx-auto" style={{color:'red'}}>delete_outline</i></div>
+					<div>In Basket</div>
+				</div>
+		  </div>
+		</td>);
+	}else{
+		lastElement=<td>9</td>;
+	}
+
+	return(
+		<tr>
+			<td style={{width:'0', padding:'5px 0'}}><hr width='5' size='70' style={{color:'green', margin:'0'}} /></td>
+			<td>
+				<div className="form-check">
+					<input className="form-check-input" type="checkbox" defaultValue="" id="flexCheckChecked" defaultChecked />
+					<label className="form-check-label" htmlFor="flexCheckChecked">
+					102
+					</label>
+				</div>	
+			</td>
+			<td>
+				<div className="d-flex">
+					<img src={chips1} width='35' height='44' alt='chips' />
+					<span className="my-auto">Fritolay Doritos Cool Ranch</span>
+				</div>
+			</td>
+			<td>198gm</td>
+			<td>$14.99</td>
+			<td>$1.00</td>
+			<td>30%</td>
+			<td>Bagged Sweets</td>
+			<td>25-March-2020</td>
+			{lastElement}
+	  	</tr>
+
+	)
+}

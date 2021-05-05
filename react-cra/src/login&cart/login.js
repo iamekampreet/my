@@ -1,35 +1,9 @@
 import React from 'react';
-import img1 from './logo.png';
 
-export default function Index(){
+function Login(){
 
     return(
         <div>
-
-            <header>
-                <nav className="navbar navbar-light" style={{backgroundColor:'#00a3da'}}>
-                <div className="container">
-                    <a className="navbar-brand" href="#">
-                    <img src={img1} alt="Logo of the company" width="70px" height="70px" />
-                    </a>
-                    <div className="nav-item dropdown my-auto">	
-                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color:'white'}}>
-                        <div className="d-flex">
-                            <i className="material-icons me-2" style={{fontSize:'60px', color:'#ace3f5'}}>account_circle</i>
-                            <p className="my-auto">Kevin</p>
-                            <i className="material-icons my-auto" style={{fontSize:'30px'}}>expand_more</i>
-                        </div>
-                    </a>
-                    <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a className="dropdown-item" href="#">Action</a></li>
-                        <li><a className="dropdown-item" href="#">Another action</a></li>
-                        <li><a className="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                    
-                    </div>
-                </div>
-                </nav>	
-            </header>
 
             <div className="container" >
                 <a href="#" className="d-flex my-3" style={{textDecoration:'none', color:'#00a3da', fontSize:'17px'}}>
@@ -71,7 +45,7 @@ export default function Index(){
                         <label htmlFor="mobileNumber">Mobile Number</label>
                         </form>
                         <hr />
-                        <button className="mySave">Save</button>
+                        <a className="mySave" href="/cart">Save</a>
                         <button className="myCancel">Cancel</button>
                     </div>
                 </div>
@@ -81,10 +55,7 @@ export default function Index(){
     )
 }
 
-
-
-
-
+export default Login;
 
 
 

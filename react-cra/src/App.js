@@ -1,38 +1,23 @@
-// import logo from './logo.svg';
 import './App.css';
 
-// import Temp from './testing/temp.js';
-import IndexTest from './testing/indexTest.js'; 
-import Cart from './testing/cart.js';
+// for react-router-dom to build multipage web app:
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-function App(){
+//importing the pages having main content:
+// import Temp from './testing/temp.js';
+import Header from './login&cart/header.js';
+import Login from './login&cart/login.js'; 
+import Cart from './login&cart/cart.js';
+
+export default function App(){
   return(
-    <div className="App">
-      <IndexTest />
-      <Cart />
-    </div>
+    <Router>
+      <Header/>
+      <Switch>
+        <Route exact path="/" component={Login}/>
+        <Route exact path="/cart" component={Cart}/>
+      </Switch>
+    </Router>
   )
 }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learning React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-export default App;

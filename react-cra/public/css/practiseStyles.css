@@ -45,6 +45,9 @@ a{
 	cursor: pointer;
 	border-radius: 7px;
 }
+.mySave:hover{
+	color:white;
+}
 .myCancel{
 	color: #ee007f;
  	border: 2px solid #ee007f;
