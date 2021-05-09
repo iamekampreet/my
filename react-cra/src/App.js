@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import Something from './Somewhere';
+import Something from './Something';
 
 export default function App() {
   return (
@@ -10,6 +10,16 @@ export default function App() {
 
 
 
+// // Uncomment this to show the Calculator:
+// import './App.css';
+// import React from 'react';
+// import Calculator from './Calculator/calculator.js';
+
+// export default function App() {
+//   return (
+//     <Calculator />
+//   )
+// }
 
 
 // // Uncomment this to show the GithubUserSearchApp:
@@ -22,7 +32,6 @@ export default function App() {
 //       <GithubUserSearch/>
 //     )
 // }
-
 
 
 // //Uncomment all of this to show login&cart pages:
