@@ -1,13 +1,22 @@
 import './App.css';
 import React from 'react';
-import Something from './Something';
+import CalculatorUsingRedux from './CalculatorUsingRedux/calculator.js';
+import { createStore } from 'redux';
+import { rootReducer } from './CalculatorUsingRedux/Reducers';
+import { Provider } from 'react-redux';
+
+const myStore = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 export default function App() {
   return (
-    <Something />
+    <Provider store={myStore}>
+      <CalculatorUsingRedux />
+    </Provider>
   )
 }
-
 
 
 // // Uncomment this to show the Calculator:
