@@ -7,12 +7,6 @@ import { setInput } from './Actions';
 function Button(props) {
     const dispatch = useDispatch();
 
-    function align() {
-        if (props.id === 'Clr' || props.id === ')' || props.id === '/') {
-            return <br />;
-        }
-    }
-
     function handlerFn() {
         const temp = props.input;
 
@@ -25,7 +19,7 @@ function Button(props) {
         else if (props.id === "Clr") {
             return () => { dispatch(setInput('')) }
         }
-        return () => { dispatch(setInput(temp + props.id)) };
+        return () => { dispatch(setInput(temp.toString() + props.id)) };
     }
 
     return (
@@ -34,7 +28,7 @@ function Button(props) {
                 onClick={handlerFn()} >
                 {props.id}
             </button>
-            {align()}
+            {(props.id === 'Clr' || props.id === ')' || props.id === '/') ? <br /> : ''}
         </>
     );
 }
