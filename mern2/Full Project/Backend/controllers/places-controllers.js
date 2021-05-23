@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 const uuid = require("uuid/v4");
 const { validationResult } = require("express-validator");
 const mongoose = require("mongoose");
@@ -6,20 +8,6 @@ const HttpError = require("../models/http-error");
 const getCoordsForAddress = require("../utils/location");
 const Place = require("../models/place");
 const User = require("../models/user");
-
-let DUMMY_DATA = [
-  {
-    id: "p1",
-    title: "Empire State Building",
-    description: "One of the most famous buildings in the world",
-    address: "20 W 34th St, New York, NY 10001, United States",
-    location: {
-      lat: 40.7484405,
-      lng: -73.9856644,
-    },
-    creator: "u1",
-  },
-];
 
 const getPlaceById = async (req, res, next) => {
   const pid = req.params.pid;
@@ -64,6 +52,7 @@ const getPlacesByUserId = async (req, res, next) => {
     places: user.places.map((place) => place.toObject({ getters: true })),
   });
 
+  // Another way of doing it:
   // let places;
   // try {
   //   places = await Place.find({ creator: uid });
@@ -92,7 +81,7 @@ const createPlace = async (req, res, next) => {
     );
   }
 
-  const { title, description, address, creator } = req.body;
+  const { title, description, address } = req.body;
 
   let coordinates;
   try {
@@ -106,14 +95,13 @@ const createPlace = async (req, res, next) => {
     description,
     address,
     location: coordinates,
-    creator,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/NYC_Empire_State_Building.jpg/640px-NYC_Empire_State_Building.jpg",
+    creator: req.userData.userId,
+    image: req.file.path,
   });
 
   let user;
   try {
-    user = await User.findById(creator);
+    user = await User.findById(req.userData.userId);
   } catch (err) {
     return next(
       new HttpError(
@@ -168,6 +156,15 @@ const updatePlace = async (req, res, next) => {
     );
   }
 
+  if (place.creator.toString() !== req.userData.userId) {
+    return next(
+      new HttpError(
+        "You are not authorized to do this because you are not the creator of the place.",
+        401
+      )
+    );
+  }
+
   place.title = req.body.title;
   place.description = req.body.description;
 
@@ -203,6 +200,17 @@ const deletePlace = async (req, res, next) => {
     );
   }
 
+  if (place.creator.id.toString() !== req.userData.userId) {
+    return next(
+      new HttpError(
+        "You are not authorized to do this because you are not the creator of the place",
+        401
+      )
+    );
+  }
+
+  const imageUrl = place.image;
+
   try {
     const sess = await mongoose.startSession();
     sess.startTransaction();
@@ -218,6 +226,8 @@ const deletePlace = async (req, res, next) => {
       )
     );
   }
+
+  fs.unlink(imageUrl, (err) => console.log(err));
 
   res.status(200).json({ message: "Deleted a place" });
 };

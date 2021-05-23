@@ -1,17 +1,9 @@
-// const uuid = require("uuid/v4");
 const { validationResult } = require("express-validator");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const HttpError = require("../models/http-error");
 const User = require("../models/user");
-
-const DUMMY_USERS = [
-  {
-    id: "u1",
-    name: "Max Shwarz",
-    email: "test@test.com",
-    password: "tester",
-  },
-];
 
 const getUsers = async (req, res, next) => {
   let users;
@@ -22,7 +14,7 @@ const getUsers = async (req, res, next) => {
       new HttpError("Could not get all users. Please try again later", 500)
     );
   }
-  res.json({ users: users.map((user) => user.toObject()) });
+  res.json({ users: users.map((user) => user.toObject({ getters: true })) });
 };
 
 const signup = async (req, res, next) => {
@@ -53,12 +45,18 @@ const signup = async (req, res, next) => {
     );
   }
 
+  let hashedPassword;
+  try {
+    hashedPassword = await bcrypt.hash(password, 12);
+  } catch (err) {
+    return next(new HttpError("Cannot create a new user password", 500));
+  }
+
   const newUser = new User({
     name,
     email,
-    password,
-    image:
-      "https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    password: hashedPassword,
+    image: req.file.path,
     places: [],
   });
 
@@ -73,7 +71,25 @@ const signup = async (req, res, next) => {
     );
   }
 
-  res.status(201).json({ user: newUser.toObject({ getters: true }) });
+  let token;
+  try {
+    token = jwt.sign(
+      { usedId: newUser.id, email: newUser.email },
+      process.env.JWT_KEY,
+      { expiresIn: "1h" }
+    );
+  } catch (err) {
+    return next(
+      new HttpError(
+        "Creating new user failed at the database. Please try again later",
+        500
+      )
+    );
+  }
+
+  res
+    .status(201)
+    .json({ userId: newUser.id, email: newUser.email, token: token });
 };
 
 const login = async (req, res, next) => {
@@ -88,13 +104,47 @@ const login = async (req, res, next) => {
     );
   }
 
-  if (!existingUser || existingUser.password !== password) {
+  if (!existingUser) {
     return next(
-      new HttpError("Invalid Credentials. Please check your input", 422)
+      new HttpError(
+        "Invalid Credentials. Cannot find the E-mail address you provided",
+        403
+      )
     );
   }
 
-  res.json({ message: "logged in" });
+  let isValidPassword;
+  try {
+    isValidPassword = await bcrypt.compare(password, existingUser.password);
+  } catch (err) {
+    return next(
+      new HttpError("Could not log you in. Please try again later", 500)
+    );
+  }
+  if (!isValidPassword) {
+    return next(
+      new HttpError("Invalid Credentials. Please check your password.", 403)
+    );
+  }
+
+  let token;
+  try {
+    token = jwt.sign(
+      { userId: existingUser.id, email: existingUser.email },
+      process.env.JWT_KEY,
+      { expiresIn: "1h" }
+    );
+  } catch (err) {
+    return next(
+      new HttpError("Could not log you in. Please try again later", 500)
+    );
+  }
+
+  res.json({
+    userId: existingUser.id,
+    email: existingUser.email,
+    token: token,
+  });
 };
 
 exports.getUsers = getUsers;
