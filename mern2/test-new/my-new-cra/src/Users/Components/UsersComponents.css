@@ -1,0 +1,8 @@
+/* UserItem */
+.myUserImage {
+  height: 300px;
+  object-fit: cover;
+}
+.myLink {
+  text-decoration: none;
+}

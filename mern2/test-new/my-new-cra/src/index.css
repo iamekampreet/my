@@ -14,7 +14,7 @@ code {
     monospace;
 }
 
-/* Footer */
+/* Footer
 .footer {
   background-color: rgb(0, 76, 255);
   position: fixed;
@@ -26,4 +26,4 @@ code {
 .footer > a {
   color: white;
   font-size: 12px;
-}
+} */

@@ -6,29 +6,37 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import Header from "./Shared/Components/UI/Header";
-import Footer from "./Shared/Components/UI/Footer";
-import UsersList from "./User/Pages/UsersList";
-import NewPlace from "./Places/Pages/NewPlace";
+import AllUsers from "./Users/Pages/AllUsers";
+import PostsForUserId from "./Posts/Pages/PostsForUserId";
+import UpdatePost from "./Posts/Pages/UpdatePost";
+import MainHeader from "./Shared/Components/Navigation/MainHeader";
+import NewPost from "./Posts/Pages/NewPost";
+import Authenticate from "./Users/Pages/Authenticate";
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <Header />
-
+      <MainHeader />
       <Switch>
-        <Route exact path="/">
-          <UsersList />
+        <Route path="/" exact>
+          <AllUsers />
         </Route>
-        <Route exact path="/places/new">
-          <NewPlace />
+        <Route path="/:uid/posts" exact>
+          <PostsForUserId />
+        </Route>
+        <Route path="/post/new" exact>
+          <NewPost />
+        </Route>
+        <Route path="/post/:pid" exact>
+          <UpdatePost />
+        </Route>
+        <Route path="/auth" exact>
+          <Authenticate />
         </Route>
         <Redirect to="/" />
       </Switch>
-
-      <Footer />
     </Router>
   );
-}
+};
 
 export default App;
