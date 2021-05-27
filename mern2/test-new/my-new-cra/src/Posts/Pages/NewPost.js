@@ -53,7 +53,7 @@ const NewPost = () => {
         validatorsArray={[validatorMinLength(6)]}
       />
       <FormInput
-        label="Address (Where this photo was taken):"
+        label="Where this photo was taken (It is advised to enter the exact address to get the most precise location on the map):"
         element="input"
         id="address"
         type="text"
