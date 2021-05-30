@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 
 const UsersRoutes = require("./Routes/UsersRoutes");
 const PostsRoutes = require("./Routes/PostsRoutes");
@@ -36,6 +37,15 @@ app.use((err, req, res, next) => {
   res.status(err.status).json({ message: err.message });
 });
 
-app.listen(5000, () => {
-  console.log("Server Started");
-});
+mongoose
+  .connect(
+    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@mycluster.tb2yd.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
+  )
+  .then(() => {
+    app.listen(5000, () => {
+      console.log("Database Connected and Server Started");
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });

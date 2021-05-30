@@ -114,21 +114,42 @@ const updatePostById = (req, res, next) => {
 
   const pid = req.params.pid;
 
-  const prevPost = DUMMY_POSTS.find(post=> post.id === pid);
-  if(!prevPost){
-      return next(new HttpError('Cannot find post having this id',422));
+  const prevPost = DUMMY_POSTS.find((post) => post.id === pid);
+  if (!prevPost) {
+    return next(new HttpError("Cannot find post having this id", 404));
   }
 
   const updatedPost = {
-      ...prevPost,
-      title:req.body.title,
-      description:req.body.description
-  }
+    ...prevPost,
+    title: req.body.title,
+    description: req.body.description,
+  };
 
-  const 
+  //Delete the post from original data storage to later insert the updated post.
+  //Check for update startegy on mongodb.
+
+  DUMMY_POSTS.splice(
+    DUMMY_POSTS.findIndex((post) => post.id === pid),
+    1
+  );
+  DUMMY_POSTS.push(updatedPost);
+
+  res.json({ posts: DUMMY_POSTS });
 };
 
-const deletePostById = (req, res, next) => {};
+const deletePostById = (req, res, next) => {
+  const pid = req.params.pid;
+
+  const prevPost = DUMMY_POSTS.findIndex((post) => post.id === pid);
+
+  if (prevPost === -1) {
+    return next(new HttpError("This post does not exist", 404));
+  }
+
+  DUMMY_POSTS.splice(prevPost, 1);
+
+  res.json({ message: "Deleted", posts: DUMMY_POSTS });
+};
 
 exports.getPostsByUserId = getPostsByUserId;
 exports.getPostById = getPostById;

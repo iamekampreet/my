@@ -5,6 +5,9 @@ const inputReducer = (state, action) => {
     case "ONINPUT":
       let formIsValid = true;
       for (const value in state.values) {
+        if (state.values[value] === null) {
+          continue;
+        }
         if (value === action.id) {
           formIsValid = formIsValid && action.isValid;
         } else {
