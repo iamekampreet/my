@@ -6,7 +6,7 @@ const UsersSchema = new mongoose.Schema({
   image: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
-  places: { type: Array, required: true },
+  places: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
 });
 
-module.exports = mongoose.Model("User", UsersSchema);
+module.exports = mongoose.model("User", UsersSchema);

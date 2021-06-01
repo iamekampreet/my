@@ -2,12 +2,10 @@ const axios = require("axios");
 const HttpError = require("./http-error");
 
 const getCoordsForAddress = async (address) => {
-  const API_KEY = "HMI7Y7D1cIUswTxGTP2v986MsjCRt3mv";
-
   const response = await axios.get(
-    `http://www.mapquestapi.com/geocoding/v1/address?key=${API_KEY}&location=${encodeURIComponent(
-      address
-    )}`
+    `http://www.mapquestapi.com/geocoding/v1/address?key=${
+      process.env.MAP_API_KEY
+    }&location=${encodeURIComponent(address)}`
   );
 
   if (!response || response.data.info.statuscode !== 0) {
