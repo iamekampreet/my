@@ -56,7 +56,7 @@ const createNewUser = async (req, res, next) => {
 
   let newUser;
   try {
-    newUser = await new User({ ...req.body, places: [] }).save();
+    newUser = await new User({ ...req.body, posts: [] }).save();
   } catch (err) {
     return next(new HttpError("Database error. Cannot create new user", 500));
   }

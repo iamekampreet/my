@@ -27,6 +27,7 @@ const Modal = (props) => {
             ></button>
           </div>
           <div className="modal-body">{props.content}</div>
+
           <div className="modal-footer">
             <button
               type="button"

@@ -1,9 +1,11 @@
 // const { v4: uuidv4 } = require("uuid");
+const mongoose = require("mongoose");
 const { validationResult } = require("express-validator");
 
 const HttpError = require("../Shared/http-error");
 const getCoordsForAddress = require("../Shared/getCoordsForAddress");
 const Post = require("../Models/PostsModel");
+const User = require("../Models/UsersModel");
 
 // const DUMMY_POSTS = [
 //   {
@@ -80,9 +82,25 @@ const createNewPost = async (req, res, next) => {
     address,
     coordinates,
   });
+
+  let session;
   try {
-    await newPost.save();
+    session = await mongoose.startSession();
+    session.startTransaction();
+
+    await newPost.save({ session });
+    // const user = await User.findById(creator);
+    // await user.posts.push(newPost._id);
+    // await user.save();
+    await Post.populate(newPost, { path: "creator" });
+    await newPost.creator.posts.push(newPost._id);
+    await newPost.creator.save({ session });
+
+    await session.commitTransaction();
+    session.endSession();
   } catch (err) {
+    await session.abortTransaction();
+    console.log(err);
     return next(new HttpError("Database error while creating new Post", 500));
   }
 
@@ -125,9 +143,26 @@ const updatePostById = async (req, res, next) => {
 const deletePostById = async (req, res, next) => {
   const pid = req.params.pid;
 
+  let session;
   try {
-    await Post.deleteOne({ _id: pid });
+    session = await mongoose.startSession();
+    session.startTransaction();
+
+    let post = await Post.findById(pid).populate("creator").session(session);
+    // const array = post.creator.posts;
+    // array.splice(
+    //   array.findIndex((id) => id == pid),
+    //   1
+    // );
+    post.creator.posts = post.creator.posts.filter((id) => id != pid);
+    await post.creator.save({ session });
+
+    await Post.deleteOne({ _id: pid }).session(session);
+
+    await session.commitTransaction();
+    session.endSession();
   } catch (err) {
+    console.log(err);
     return next(new HttpError("Database error while deleting the post", 500));
   }
 

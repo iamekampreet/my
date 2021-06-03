@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Modal from "../../Shared/Components/UIElements/Modal";
+import Map from "../../Shared/Components/Map";
 import "./PostsComponents.css";
 
 const PostItem = (props) => {
+  const [isMapClicked, setIsMapClicked] = useState(false);
+
   const deleteHandler = () => {
     console.log("Deleted");
   };
@@ -30,11 +33,22 @@ const PostItem = (props) => {
           <button
             className="btn btn-success mx-5 mb-2"
             data-bs-toggle="modal"
-            data-bs-target="#map"
+            data-bs-target="#mapModal"
+            onClick={() => setIsMapClicked(true)}
           >
             Lookup in Map
           </button>
-          <Modal id="map" largeModal title="Map" content="Map here!" />
+          <Modal
+            id="mapModal"
+            largeModal
+            title="Map"
+            content={
+              <Map
+                center={{ lng: 76.7773509, lat: 30.7272914 }}
+                zoom={isMapClicked ? 12 : 0}
+              />
+            }
+          />
 
           <Link role="button" className="btn btn-info mx-3 mb-2" to="/post/p1">
             Update
